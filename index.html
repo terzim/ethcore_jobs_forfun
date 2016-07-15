@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Ethcore Job</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" type="text/css" href="./src/li-scroller.css">
+
+  <script src="./src/javascript_advert.js"></script>
+  <script src="./src/flatten_object.js"></script>
+  <script src="./src/jquery-3.1.0.min.js"></script>
+  <script src="./src/jquery.li-scroller.1.0.js"></script>
+  
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+
+  
+  <script>
+	   var flat_advert = flatten(job);
+
+	   var print = function(o){
+	    var str='';
+
+	    str+= '<ul id="massi">';
+	    
+			    for(var p in o){
+			        if(typeof o[p] == 'string'){
+			            str+= '<li> &nbsp; &nbsp; &nbsp; ' + p + ' - ' + o[p] +'&nbsp; &nbsp; &nbsp; &#9830; &#9830; &#9830; &#9830;</li>';
+			        }else{
+			            str+= '<li> &nbsp; &nbsp; &nbsp; ' + p + ' - ' + o[p] + '&nbsp; &nbsp; &nbsp; &#9830; &#9830; &#9830; &#9830;</li>';
+			        }
+			    }
+			    str+= '</ul>';
+			    return str;
+			}
+
+	   $('body').append( print(flat_advert) );
+	    
+	    $(function(){
+	        $("ul#massi").liScroll({travelocity: 0.17});
+	    });
+  </script> 
+
+
+
+
+</body>
+</html>
